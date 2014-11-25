@@ -27,9 +27,9 @@ data Tree a = Node a (Tree a) (Tree a)
 	| Empty
 	deriving (Show)
 
-height :: Tree -> Int
+height :: Tree a -> Int
 height Empty = 0
-height (Node left right) = 1 + max (height left) (height right)
+height (Node _ left right) = 1 + max (height left) (height right)
 
 main = do
 	print $ myLength "foo" == length "foo"
